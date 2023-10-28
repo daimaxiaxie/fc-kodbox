@@ -9,6 +9,8 @@ mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
 mkdir -p /tmp/var/sessions/
 
+envsubst '${NGINX_PORT}' < /code/nginx.conf > /code/nginx.conf
+
 echo "start php-fpm"
 php-fpm7.4 -R -c /code/php.ini -y /code/php-fpm.conf
 

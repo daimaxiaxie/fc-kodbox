@@ -65,7 +65,9 @@ services:
         cpu: 2.0
         diskSize: 512
         instanceConcurrency: 100
-        caPort: 80
+        caPort: {{ port }}
+        environmentVariables:
+          NGINX_PORT: {{ port }}
         customRuntimeConfig:
           command:
             - bash
